@@ -1,0 +1,68 @@
+name: ULTRAS_HOMES
+version: '${version}'
+main: me.uc.hussein.ultrashomes.UltrasHomesPlugin
+api-version: '1.21'
+author: UC_Hussein
+authors: [UC_Hussein]
+description: Professional Homes system - GUI driven, per-player storage, teleport safety, admin tools.
+load: POSTWORLD
+
+commands:
+  home:
+    description: Open the Homes GUI, teleport to a home, or manage it.
+    usage: /home [name|remove <name>|rest|setting|admin ...]
+    aliases: [uhome]
+  homes:
+    description: Open the Homes GUI.
+    usage: /homes
+    aliases: [uhomes]
+  sethome:
+    description: Open the Homes GUI to save a new home.
+    usage: /sethome
+    aliases: [usethome]
+  home_admin:
+    description: Administrate players' homes.
+    usage: /home_admin <add|set|rest|tp|home|setting|reload> ...
+    aliases: [uhomeadmin, homeadmin]
+
+permissions:
+  ultras.homes.use:
+    description: Base permission to use the Homes system
+    default: true
+  ultras.homes.home:
+    description: Use /home
+    default: true
+    children: { ultras.homes.use: true }
+  ultras.homes.sethome:
+    description: Use /sethome
+    default: true
+    children: { ultras.homes.use: true }
+  ultras.homes.setting:
+    description: Open /home setting (your personal settings)
+    default: true
+    children: { ultras.homes.use: true }
+  ultras.homes.admin:
+    description: Full homes-admin access
+    default: op
+    children:
+      ultras.homes.admin.add: true
+      ultras.homes.admin.set: true
+      ultras.homes.admin.rest: true
+      ultras.homes.admin.tp: true
+      ultras.homes.admin.reload: true
+      ultras.homes.admin.home: true
+      ultras.homes.admin.setting: true
+  ultras.homes.admin.add: { description: /home_admin add, default: op }
+  ultras.homes.admin.set: { description: /home_admin set, default: op }
+  ultras.homes.admin.rest: { description: /home_admin rest, default: op }
+  ultras.homes.admin.tp: { description: /home_admin tp, default: op }
+  ultras.homes.admin.reload: { description: /home_admin reload, default: op }
+  ultras.homes.admin.home: { description: /home admin home <player> (manage a player's homes), default: op }
+  ultras.homes.admin.setting: { description: /home admin setting <player> (edit a player's settings), default: op }
+  ultras.homes.bypass.cooldown: { description: Skip teleport cooldown, default: op }
+  ultras.homes.bypass.limit: { description: Unlimited homes, default: false }
+  ultras.homes.bypass.world: { description: Ignore the world blacklist, default: op }
+  ultras.homes.limit.7: { description: Home limit 7, default: false }
+  ultras.homes.limit.10: { description: Home limit 10, default: false }
+  ultras.homes.limit.20: { description: Home limit 20, default: false }
+  ultras.homes.limit.50: { description: Home limit 50, default: false }

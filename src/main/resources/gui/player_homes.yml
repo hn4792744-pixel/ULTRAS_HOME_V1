@@ -1,0 +1,97 @@
+# واجهة الإداري: هومات لاعب مستهدف (/home admin home <player> ، وكذلك /home_admin tp <player>)
+version: 2
+title: "<gradient:#8B0000:#FF5555>ULTRAS HOMES</gradient> <dark_gray>| <gray>{target} <dark_gray>(Page {page})"
+rows: 4
+# يجب ألا يزيد عن عدد عناصر bed-slots و dye-slots
+homes-per-page: 7
+bed-slots: [10, 11, 12, 13, 14, 15, 16]
+dye-slots: [19, 20, 21, 22, 23, 24, 25]
+
+background:
+  enabled: true
+  material: BLACK_STAINED_GLASS_PANE
+  name: " "
+  exclude-slots: [2, 4, 6, 8, 10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 30, 32, 34]
+
+# رأس اللاعب المستهدف (يعتمد على player-info في config.yml): الحالة + عدد الهومات من الحد
+player-head:
+  slot: 4
+  name: "<white>{target}"
+  lore:
+    - "<gray>Status: <white>{online_status}"
+    - "<gray>World: <white>{world}"
+    - "<gray>Coordinates: <white>{x}, {y}, {z}"
+    - "<gray>ʜᴏᴍᴇs: <white>{current} <dark_gray>/ <white>{limit}"
+
+# أعلى اليمين: إعدادات اللاعب المستهدف (تفتح GUI مباشرة، لا تنفذ أمرًا نصيًا)
+settings-button:
+  slot: 8
+  material: COMPARATOR
+  name: "<white>Settings"
+  lore:
+    - "<gray>{target}'s preferences"
+    - ""
+    - "<gray>◦ ᴏᴘᴇɴ ᴛʜᴇɪʀ sᴇᴛᴛɪɴɢs"
+  sound: UI_BUTTON_CLICK
+
+# التعامل مع سلوتات الهوم: زيادة / إنقاص حد اللاعب بمقدار 1 (تحتاج ultras.homes.admin.add / .set)
+limit-add:
+  slot: 6
+  material: LIME_DYE
+  name: "<#7BC47F>+ <white>Add slot"
+  lore:
+    - "<gray>Limit: <white>{limit}"
+    - ""
+    - "<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ ᴀᴅᴅ ᴏɴᴇ sʟᴏᴛ"
+  sound: UI_BUTTON_CLICK
+limit-remove:
+  slot: 2
+  material: RED_DYE
+  name: "<#D96C6C>− <white>Remove slot"
+  lore:
+    - "<gray>Limit: <white>{limit}"
+    - ""
+    - "<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ ʀᴇᴍᴏᴠᴇ ᴏɴᴇ sʟᴏᴛ"
+  sound: UI_BUTTON_CLICK
+
+navigation:
+  previous: { slot: 30, material: ARROW, name: "<yellow>« Previous Page", lore: ["<gray>Go to page {page}"], sound: UI_BUTTON_CLICK }
+  next: { slot: 34, material: ARROW, name: "<yellow>Next Page »", lore: ["<gray>Go to page {page}"], sound: UI_BUTTON_CLICK }
+  close: { slot: 32, material: BARRIER, name: "<red>Close", lore: ["<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴏsᴇ"], sound: UI_BUTTON_CLICK }
+
+home:
+  # سلوت فارغ ومسموح: الإداري يحفظ موقعه الحالي كهوم لهذا اللاعب (باسم السلوت الافتراضي homes.name-format)
+  available:
+    bed: { material: GRAY_BED, name: "<gray>Home #{home_number}", lore: ["<gray>Status: <white>Available"] }
+    dye:
+      material: GRAY_DYE
+      name: "<gray>Add Home #{home_number}"
+      lore:
+        - "<yellow>Save your location as this home"
+        - "<gray>for <white>{target}"
+        - ""
+        - "<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ sᴀᴠᴇ ʜᴇʀᴇ"
+      sound: BLOCK_NOTE_BLOCK_PLING
+  saved:
+    bed:
+      material: GREEN_BED
+      name: "<green>{home}"
+      lore:
+        - "<gray>World: <white>{world}"
+        - "<gray>Coordinates: <white>{x}, {y}, {z}"
+        - ""
+        - "<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ ᴛᴇʟᴇᴘᴏʀᴛ"
+      sound: BLOCK_NOTE_BLOCK_XYLOPHONE
+    dye:
+      material: GREEN_DYE
+      name: "<green>Manage {home}"
+      lore:
+        - "<yellow>Teleport or delete this home"
+        - ""
+        - "<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ ᴍᴀɴᴀɢᴇ"
+      sound: UI_BUTTON_CLICK
+  locked:
+    bed: { material: BLACK_BED, name: "<dark_gray>Locked", lore: ["<dark_gray>◦ ʀᴇǫᴜɪʀᴇs ᴀ ʜɪɢʜᴇʀ ʟɪᴍɪᴛ"] }
+    dye: { material: BLACK_DYE, name: "<dark_gray>Locked", lore: ["<gray>Required limit: <white>{required_limit}"] }
+
+open-sound: BLOCK_CHEST_OPEN

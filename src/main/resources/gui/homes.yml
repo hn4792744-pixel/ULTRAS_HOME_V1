@@ -1,0 +1,120 @@
+# واجهة قائمة الهومات الخاصة باللاعب (/home و /homes و /sethome)
+# كل شيء هنا بيانات: المواد، الأسماء، الـlore، السلوتات، الأصوات. لا يوجد أي رقم ثابت داخل الجافا.
+version: 2
+title: "<gradient:#8B0000:#FF5555>ULTRAS HOMES</gradient> <dark_gray>| <gray>Page {page}"
+rows: 4
+# عدد الهومات في الصفحة. يجب ألا يزيد عن عدد عناصر bed-slots و dye-slots
+# (إذا زاد، يستعمل البلاجن عدد السلوتات المتوفرة ويكتب تحذيرًا في الكونسول).
+homes-per-page: 5
+
+# أرقام سلوتات الـ Bed (الصف الثاني) - بالترتيب
+bed-slots: [11, 12, 13, 14, 15]
+# أرقام سلوتات الـ Dye (الصف الثالث، تحت كل Bed مباشرة)
+dye-slots: [20, 21, 22, 23, 24]
+
+background:
+  enabled: false
+  material: BLACK_STAINED_GLASS_PANE
+  name: " "
+  exclude-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 30, 32, 34]
+
+# عدد الهومات المستعملة من الحد: {current} من {limit} (ديناميكي). الصفحات: {page} من {pages}
+info:
+  slot: 4
+  material: BOOK
+  name: "<white>ʏᴏᴜʀ ʜᴏᴍᴇs"
+  lore:
+    - "<gray>ʜᴏᴍᴇs: <white>{current} <dark_gray>/ <white>{limit}"
+    - "<gray>ᴘᴀɢᴇ: <white>{page} <dark_gray>/ <white>{pages}"
+
+# زر الإعدادات الشخصية (أعلى اليمين). يظهر لمن يملك الصلاحية ultras.homes.setting
+settings-button:
+  slot: 8
+  material: COMPARATOR
+  name: "<white>Settings"
+  lore:
+    - "<gray>ʏᴏᴜʀ ᴘᴇʀsᴏɴᴀʟ ᴘʀᴇғᴇʀᴇɴᴄᴇs"
+    - ""
+    - "<gray>◦ ᴏᴘᴇɴ ʏᴏᴜʀ ᴘᴇʀsᴏɴᴀʟ sᴇᴛᴛɪɴɢs"
+  sound: UI_BUTTON_CLICK
+
+# لا يوجد زر Close في هذه الواجهة (مقصود).
+navigation:
+  previous:
+    slot: 27
+    material: ARROW
+    name: "<yellow>« Previous Page"
+    lore: ["<gray>Go to page {page}"]
+    sound: UI_BUTTON_CLICK
+
+  next:
+    slot: 35
+    material: ARROW
+    name: "<yellow>Next Page »"
+    lore: ["<gray>Go to page {page}"]
+    sound: UI_BUTTON_CLICK
+
+home:
+  available:
+    bed:
+      material: GRAY_BED
+      name: "<gray>Home #{home_number}"
+      lore:
+        - "<gray>Status: <white>Available"
+        - ""
+        - "<dark_gray>Click the dye below to save"
+
+    dye:
+      material: GRAY_DYE
+      name: "<gray>Save Home #{home_number}"
+      lore:
+        - "<yellow>Click to save your current location"
+        - ""
+        - "<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ sᴀᴠᴇ ᴛʜɪs ʜᴏᴍᴇ"
+      sound: BLOCK_NOTE_BLOCK_PLING
+
+  saved:
+    bed:
+      material: GREEN_BED
+      name: "<green>{home}"
+      lore:
+        - "<gray>World: <white>{world}"
+        - "<gray>Coordinates: <white>{x}, {y}, {z}"
+        - ""
+        - "<yellow>Click to teleport"
+        - ""
+        - "<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ ᴛᴇʟᴇᴘᴏʀᴛ"
+
+      sound: BLOCK_NOTE_BLOCK_XYLOPHONE
+
+    dye:
+      material: GREEN_DYE
+      name: "<green>Manage {home}"
+      lore:
+        - "<yellow>Click to manage this home"
+        - ""
+        - "<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ ᴍᴀɴᴀɢᴇ ᴛʜɪs ʜᴏᴍᴇ"
+
+      sound: UI_BUTTON_CLICK
+
+  locked:
+    bed:
+      material: BLACK_BED
+      name: "<dark_gray>Locked"
+      lore:
+        - "<gray>Requires a higher home limit"
+        - ""
+        - "<dark_gray>◦ ʀᴇǫᴜɪʀᴇs ᴀ ʜɪɢʜᴇʀ ʟɪᴍɪᴛ"
+
+    dye:
+      material: BLACK_DYE
+      name: "<dark_gray>Locked"
+      lore:
+        - "<gray>Required limit: <white>{required_limit}"
+        - ""
+        - "<dark_gray>◦ ʟᴏᴄᴋᴇᴅ sʟᴏᴛ"
+
+      sound: ENTITY_VILLAGER_NO
+
+save-success-sound: ENTITY_EXPERIENCE_ORB_PICKUP
+open-sound: BLOCK_CHEST_OPEN

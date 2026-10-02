@@ -1,0 +1,42 @@
+# واجهة إدارة هوم واحدة مملوكة للاعب نفسه (تظهر عند الضغط على Dye أخضر في homes.yml)
+version: 2
+title: "<gradient:#8B0000:#FF5555>ULTRAS HOMES</gradient> <dark_gray>| <gray>Manage {home}"
+rows: 3
+
+background:
+  enabled: true
+  material: BLACK_STAINED_GLASS_PANE
+  name: " "
+  exclude-slots: [11, 13, 15]
+
+info:
+  slot: 13
+  material: PAPER
+  name: "<white>{home}"
+  lore:
+    - "<gray>World: <white>{world}"
+    - "<gray>Coordinates: <white>{x}, {y}, {z}"
+    - "<gray>Created: <white>{created_at}"
+
+teleport:
+  slot: 11
+  material: ENDER_PEARL
+  name: "<green>Teleport"
+  lore: ["<gray>Teleport to this home", "", "<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ ᴛᴇʟᴇᴘᴏʀᴛ"]
+  sound: BLOCK_NOTE_BLOCK_XYLOPHONE
+
+delete:
+  slot: 15
+  material: RED_DYE
+  name: "<#D96C6C>Delete"
+  lore: ["<gray>Permanently delete this home", "<#D96C6C>This cannot be undone", "", "<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ ᴅᴇʟᴇᴛᴇ"]
+  sound: ENTITY_ITEM_BREAK
+  # هل يطلب تأكيدًا ثانيًا (ضغطة ثانية خلال 5 ثواني) قبل الحذف الفعلي؟
+  confirm: true
+
+back:
+  slot: 22
+  material: ARROW
+  name: "<yellow>« Back"
+  lore: ["<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ ɢᴏ ʙᴀᴄᴋ"]
+  sound: UI_BUTTON_CLICK

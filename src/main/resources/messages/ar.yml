@@ -1,0 +1,102 @@
+# ULTRAS_HOMES - الرسائل العربية. كل رسالة تبدأ بـ {prefix} (يُضبط من config.yml)؛ اسم السيرفر موجود في الـ prefix فقط.
+# لا تغيّر أسماء الـ placeholders مثل {home} و {player} و {limit}.
+version: 2
+
+# ---- عام / general
+general:
+  no-permission: "{prefix}<#D96C6C>× ليس لديك صلاحية"
+  player-only: "{prefix}<#D96C6C>× هذا الأمر للاعبين فقط"
+  unknown-player: "{prefix}<#D96C6C>× اللاعب غير موجود <white>{player}</white>"
+  invalid-usage: "{prefix}<#D96C6C>× الاستخدام <white>{usage}</white>"
+  world-disabled: "{prefix}<#D96C6C>× نظام الهومات معطل في هذا العالم"
+  reload-done: "{prefix}<#7BC47F>✓ تمت إعادة التحميل"
+
+# ---- الهومات / homes
+home:
+  saved: "{prefix}<#7BC47F>✓ تم حفظ الهوم <white>{home}</white> <dark_gray>({current}/{limit})"
+  deleted: "{prefix}<#7BC47F>✓ تم حذف الهوم <white>{home}</white>"
+  not-found: "{prefix}<#D96C6C>× الهوم غير موجود <white>{home}</white>"
+  no-homes: "{prefix}<gray>◉ لا توجد هومات محفوظة بعد"
+  limit-reached: "{prefix}<#E0B65A>! وصلت إلى الحد الأقصى للهومات <white>({current}/{limit})"
+  locked: "{prefix}<#D96C6C>× هذا السلوت مقفل <dark_gray>·</dark_gray> <gray>الحد المطلوب <white>{required_limit}</white>"
+  reset-confirm: "{prefix}<#E0B65A>! حذف جميع الهومات؟ <click:run_command:'/home rest confirm'><hover:show_text:'<gray>اضغط للتأكيد'><#7BC47F><bold>[تأكيد]</bold></hover></click> <dark_gray>({seconds}s)"
+  reset-none-pending: "{prefix}<#D96C6C>× لا يوجد شيء لتأكيده <dark_gray>·</dark_gray> <gray>نفّذ <white>/home rest</white> مرة أخرى"
+  reset-done: "{prefix}<#7BC47F>✓ تم حذف جميع الهومات"
+
+# ---- النقل / teleport
+teleport:
+  starting: "{prefix}<#8FB8DE>→ جاري الانتقال إلى <white>{home}</white> <gray>خلال <white>{delay}s</white> <dark_gray>·</dark_gray> <gray>لا تتحرك"
+  countdown: "{prefix}<gray>→ الانتقال خلال <yellow>{seconds}s</yellow>"
+  success: "{prefix}<#7BC47F>✓ تم الانتقال بنجاح <dark_gray>·</dark_gray> <white>{home}</white>"
+  cancelled-move: "{prefix}<#D96C6C>× تم إلغاء الانتقال <dark_gray>·</dark_gray> <gray>لقد تحركت"
+  cancelled-damage: "{prefix}<#D96C6C>× تم إلغاء الانتقال <dark_gray>·</dark_gray> <gray>تلقيت ضررًا"
+  cancelled-death: "{prefix}<#D96C6C>× تم إلغاء الانتقال"
+  cancelled-other: "{prefix}<#D96C6C>× تم إلغاء الانتقال"
+  already-pending: "{prefix}<#E0B65A>! لديك عملية انتقال قيد التنفيذ"
+  cooldown: "{prefix}<#E0B65A>! انتظر <white>{remaining}</white> <gray>قبل الانتقال مرة أخرى"
+  invalid-location: "{prefix}<#D96C6C>× موقع هذا الهوم لم يعد صالحًا"
+  world-blocked: "{prefix}<#D96C6C>× الانتقال إلى هذا العالم معطل"
+
+# ---- الواجهات / gui
+gui:
+  save-header: "<gray>هوم متاح"
+  manage-header: "<gray>إدارة الهوم"
+  delete-confirm: "{prefix}<#E0B65A>! اضغط حذف مرة أخرى للتأكيد"
+  admin-save-disabled: "{prefix}<#D96C6C>× لا يمكنك حفظ هوم من هنا"
+  status-online: "متصل"
+  status-offline: "غير متصل"
+
+# ---- الإدارة / admin
+admin:
+  target-required: "{prefix}<#D96C6C>× الاستخدام <white>/home admin [add|set|rest|tp|home|setting|reload] ...</white>"
+  add-done: "{prefix}<#7BC47F>✓ تمت زيادة حد <white>{target}</white> بمقدار <white>{amount}</white> <dark_gray>({old} → {new})"
+  add-done-all: "{prefix}<#7BC47F>✓ تمت زيادة حد <white>{count}</white> لاعب بمقدار <white>{amount}</white>"
+  set-done: "{prefix}<#7BC47F>✓ تم تعيين حد <white>{target}</white> إلى <white>{new}</white> <dark_gray>(كان {old})"
+  set-done-all: "{prefix}<#7BC47F>✓ تم تعيين الحد إلى <white>{new}</white> لـ <white>{count}</white> لاعب"
+  rest-done: "{prefix}<#7BC47F>✓ تمت إعادة حد <white>{target}</white> إلى الافتراضي <dark_gray>({default})"
+  rest-done-all: "{prefix}<#7BC47F>✓ تمت إعادة الحد لـ <white>{count}</white> لاعب"
+  rest-homes-deleted: "{prefix}<#7BC47F>✓ تم حذف هومات <white>{target}</white>"
+  tp-done: "{prefix}<#8FB8DE>→ تم نقلك إلى <white>{target}</white><gray>:</gray> <white>{home}</white>"
+  tp-not-found: "{prefix}<#D96C6C>× <white>{target}</white> لا يملك هومًا باسم <white>{home}</white>"
+  invalid-amount: "{prefix}<#D96C6C>× يجب أن يكون العدد رقمًا موجبًا"
+  max-exceeded: "{prefix}<#E0B65A>! تم التقييد بالحد الأقصى <white>{maximum}</white> هوم"
+  exceeds-kept: "{prefix}<#E0B65A>! لدى <white>{target}</white> هومات فوق الحد الجديد <dark_gray>·</dark_gray> <gray>تبقى محفوظة لكن مقفلة"
+  exceeds-deleted: "{prefix}<#E0B65A>! تم حذف <white>{count}</white> هوم فوق الحد الجديد لدى <white>{target}</white>"
+  home-saved: "{prefix}<#7BC47F>✓ تم حفظ هوم للاعب <white>{target}</white> <dark_gray>·</dark_gray> <white>{home}</white> <dark_gray>({current}/{limit})"
+  home-deleted: "{prefix}<#7BC47F>✓ تم حذف الهوم <dark_gray>·</dark_gray> <white>{target}</white><gray>:</gray> <white>{home}</white>"
+  limit-changed: "{prefix}<#7BC47F>✓ حد <white>{target}</white> <dark_gray>({old} → {new})"
+
+# ---- الإعدادات الشخصية / personal settings
+settings:
+  state-on: "ON"
+  state-off: "OFF"
+  chat-on: "{prefix}<#7BC47F>✓ تم تفعيل رسائل الشات"
+  chat-off: "{prefix}<gray>◉ تم تعطيل رسائل الشات"
+  sounds-on: "{prefix}<#7BC47F>✓ تم تفعيل أصوات البلاجن"
+  sounds-off: "{prefix}<gray>◉ تم تعطيل أصوات البلاجن"
+  language-changed: "{prefix}<#7BC47F>✓ تم تغيير اللغة إلى <white>{language}</white>"
+  admin-chat-changed: "{prefix}<#7BC47F>✓ <white>{target}</white> <gray>رسائل الشات <white>{state}</white>"
+  admin-sounds-changed: "{prefix}<#7BC47F>✓ <white>{target}</white> <gray>أصوات البلاجن <white>{state}</white>"
+  admin-language-changed: "{prefix}<#7BC47F>✓ <white>{target}</white> <gray>اللغة <white>{language}</white>"
+  language-name:
+    en: "English"
+    ar: "العربية"
+
+# ---- المساعدة / command help
+command:
+  help:
+    - "{prefix}◉ أوامر الهومات"
+    - "<dark_gray>  ◦ <white>/home <gray>فتح قائمة الهومات"
+    - "<dark_gray>  ◦ <white>/home [اسم] <gray>الانتقال إلى هوم"
+    - "<dark_gray>  ◦ <white>/home remove [اسم] <gray>حذف هوم"
+    - "<dark_gray>  ◦ <white>/home rest <gray>حذف كل الهومات"
+    - "<dark_gray>  ◦ <white>/home setting <gray>إعداداتك الشخصية"
+  admin-help:
+    - "{prefix}◉ أوامر الإدارة"
+    - "<dark_gray>  ◦ <white>/home admin home [لاعب] <gray>إدارة هومات لاعب"
+    - "<dark_gray>  ◦ <white>/home admin setting [لاعب] <gray>تعديل إعدادات لاعب"
+    - "<dark_gray>  ◦ <white>/home admin add [لاعب|all] [عدد]"
+    - "<dark_gray>  ◦ <white>/home admin set [لاعب|all] [عدد]"
+    - "<dark_gray>  ◦ <white>/home admin rest [لاعب|all]"
+    - "<dark_gray>  ◦ <white>/home admin tp [لاعب] [هوم]"
+    - "<dark_gray>  ◦ <white>/home admin reload"

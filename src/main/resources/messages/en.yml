@@ -1,0 +1,102 @@
+# ULTRAS_HOMES - English messages. Every message starts with {prefix} (set in config.yml); the server name lives ONLY in the prefix.
+# Colours: success #7BC47F | error #D96C6C | warning #E0B65A | info gray | teleport #8FB8DE. Placeholders such as {home} must not be renamed.
+version: 2
+
+# ---- عام / general
+general:
+  no-permission: "{prefix}<#D96C6C>× ɴᴏ ᴘᴇʀᴍɪssɪᴏɴ"
+  player-only: "{prefix}<#D96C6C>× ᴘʟᴀʏᴇʀs ᴏɴʟʏ"
+  unknown-player: "{prefix}<#D96C6C>× ᴘʟᴀʏᴇʀ ɴᴏᴛ ғᴏᴜɴᴅ <white>{player}</white>"
+  invalid-usage: "{prefix}<#D96C6C>× ᴜsᴀɢᴇ <white>{usage}</white>"
+  world-disabled: "{prefix}<#D96C6C>× ʜᴏᴍᴇs ᴀʀᴇ ᴅɪsᴀʙʟᴇᴅ ɪɴ ᴛʜɪs ᴡᴏʀʟᴅ"
+  reload-done: "{prefix}<#7BC47F>✓ ʀᴇʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇᴅ"
+
+# ---- الهومات / homes
+home:
+  saved: "{prefix}<#7BC47F>✓ ʜᴏᴍᴇ sᴀᴠᴇᴅ <white>{home}</white> <dark_gray>({current}/{limit})"
+  deleted: "{prefix}<#7BC47F>✓ ʜᴏᴍᴇ ᴅᴇʟᴇᴛᴇᴅ <white>{home}</white>"
+  not-found: "{prefix}<#D96C6C>× ʜᴏᴍᴇ ɴᴏᴛ ғᴏᴜɴᴅ <white>{home}</white>"
+  no-homes: "{prefix}<gray>◉ ɴᴏ sᴀᴠᴇᴅ ʜᴏᴍᴇs ʏᴇᴛ"
+  limit-reached: "{prefix}<#E0B65A>! ʜᴏᴍᴇ ʟɪᴍɪᴛ ʀᴇᴀᴄʜᴇᴅ <white>({current}/{limit})"
+  locked: "{prefix}<#D96C6C>× sʟᴏᴛ ʟᴏᴄᴋᴇᴅ <dark_gray>·</dark_gray> <gray>ʀᴇǫᴜɪʀᴇs ʟɪᴍɪᴛ <white>{required_limit}</white>"
+  reset-confirm: "{prefix}<#E0B65A>! ᴅᴇʟᴇᴛᴇ ᴀʟʟ ʜᴏᴍᴇs? <click:run_command:'/home rest confirm'><hover:show_text:'<gray>ᴄʟɪᴄᴋ ᴛᴏ ᴄᴏɴғɪʀᴍ'><#7BC47F><bold>[ᴄᴏɴғɪʀᴍ]</bold></hover></click> <dark_gray>({seconds}s)"
+  reset-none-pending: "{prefix}<#D96C6C>× ɴᴏᴛʜɪɴɢ ᴛᴏ ᴄᴏɴғɪʀᴍ <dark_gray>·</dark_gray> <gray>ʀᴜɴ <white>/home rest</white> ᴀɢᴀɪɴ"
+  reset-done: "{prefix}<#7BC47F>✓ ᴀʟʟ ʜᴏᴍᴇs ᴅᴇʟᴇᴛᴇᴅ"
+
+# ---- النقل / teleport
+teleport:
+  starting: "{prefix}<#8FB8DE>→ ᴛᴇʟᴇᴘᴏʀᴛɪɴɢ ᴛᴏ <white>{home}</white> <gray>ɪɴ <white>{delay}s</white> <dark_gray>·</dark_gray> <gray>ʜᴏʟᴅ sᴛɪʟʟ"
+  countdown: "{prefix}<gray>→ ᴛᴇʟᴇᴘᴏʀᴛɪɴɢ ɪɴ <yellow>{seconds}s</yellow>"
+  success: "{prefix}<#7BC47F>✓ ᴛʀᴀɴsғᴇʀ ᴄᴏᴍᴘʟᴇᴛᴇᴅ <dark_gray>·</dark_gray> <white>{home}</white>"
+  cancelled-move: "{prefix}<#D96C6C>× ᴛᴇʟᴇᴘᴏʀᴛ ᴄᴀɴᴄᴇʟʟᴇᴅ <dark_gray>·</dark_gray> <gray>ʏᴏᴜ ᴍᴏᴠᴇᴅ"
+  cancelled-damage: "{prefix}<#D96C6C>× ᴛᴇʟᴇᴘᴏʀᴛ ᴄᴀɴᴄᴇʟʟᴇᴅ <dark_gray>·</dark_gray> <gray>ʏᴏᴜ ᴛᴏᴏᴋ ᴅᴀᴍᴀɢᴇ"
+  cancelled-death: "{prefix}<#D96C6C>× ᴛᴇʟᴇᴘᴏʀᴛ ᴄᴀɴᴄᴇʟʟᴇᴅ"
+  cancelled-other: "{prefix}<#D96C6C>× ᴛᴇʟᴇᴘᴏʀᴛ ᴄᴀɴᴄᴇʟʟᴇᴅ"
+  already-pending: "{prefix}<#E0B65A>! ᴛᴇʟᴇᴘᴏʀᴛ ᴀʟʀᴇᴀᴅʏ ɪɴ ᴘʀᴏɢʀᴇss"
+  cooldown: "{prefix}<#E0B65A>! ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ <white>{remaining}</white> <gray>ʙᴇғᴏʀᴇ ᴛᴇʟᴇᴘᴏʀᴛɪɴɢ ᴀɢᴀɪɴ"
+  invalid-location: "{prefix}<#D96C6C>× ᴛʜɪs ʜᴏᴍᴇ ʟᴏᴄᴀᴛɪᴏɴ ɪs ɴᴏ ʟᴏɴɢᴇʀ ᴠᴀʟɪᴅ"
+  world-blocked: "{prefix}<#D96C6C>× ᴛᴇʟᴇᴘᴏʀᴛɪɴɢ ᴛᴏ ᴛʜɪs ᴡᴏʀʟᴅ ɪs ᴅɪsᴀʙʟᴇᴅ"
+
+# ---- الواجهات / gui
+gui:
+  save-header: "<gray>ᴀᴠᴀɪʟᴀʙʟᴇ ʜᴏᴍᴇ"
+  manage-header: "<gray>ᴍᴀɴᴀɢᴇ ʜᴏᴍᴇ"
+  delete-confirm: "{prefix}<#E0B65A>! ᴄʟɪᴄᴋ ᴅᴇʟᴇᴛᴇ ᴀɢᴀɪɴ ᴛᴏ ᴄᴏɴғɪʀᴍ"
+  admin-save-disabled: "{prefix}<#D96C6C>× ʏᴏᴜ ᴄᴀɴɴᴏᴛ sᴀᴠᴇ ᴀ ʜᴏᴍᴇ ʜᴇʀᴇ"
+  status-online: "ᴏɴʟɪɴᴇ"
+  status-offline: "ᴏғғʟɪɴᴇ"
+
+# ---- الإدارة / admin
+admin:
+  target-required: "{prefix}<#D96C6C>× ᴜsᴀɢᴇ <white>/home admin [add|set|rest|tp|home|setting|reload] ...</white>"
+  add-done: "{prefix}<#7BC47F>✓ <white>{target}</white> ʟɪᴍɪᴛ ɪɴᴄʀᴇᴀsᴇᴅ ʙʏ <white>{amount}</white> <dark_gray>({old} → {new})"
+  add-done-all: "{prefix}<#7BC47F>✓ ʟɪᴍɪᴛ ɪɴᴄʀᴇᴀsᴇᴅ ғᴏʀ <white>{count}</white> ᴘʟᴀʏᴇʀs ʙʏ <white>{amount}</white>"
+  set-done: "{prefix}<#7BC47F>✓ <white>{target}</white> ʟɪᴍɪᴛ sᴇᴛ ᴛᴏ <white>{new}</white> <dark_gray>(ᴡᴀs {old})"
+  set-done-all: "{prefix}<#7BC47F>✓ ʟɪᴍɪᴛ sᴇᴛ ᴛᴏ <white>{new}</white> ғᴏʀ <white>{count}</white> ᴘʟᴀʏᴇʀs"
+  rest-done: "{prefix}<#7BC47F>✓ <white>{target}</white> ʟɪᴍɪᴛ ʀᴇsᴇᴛ ᴛᴏ ᴅᴇғᴀᴜʟᴛ <dark_gray>({default})"
+  rest-done-all: "{prefix}<#7BC47F>✓ ʟɪᴍɪᴛ ʀᴇsᴇᴛ ғᴏʀ <white>{count}</white> ᴘʟᴀʏᴇʀs"
+  rest-homes-deleted: "{prefix}<#7BC47F>✓ ʜᴏᴍᴇs ᴅᴇʟᴇᴛᴇᴅ ғᴏʀ <white>{target}</white>"
+  tp-done: "{prefix}<#8FB8DE>→ ᴛᴇʟᴇᴘᴏʀᴛᴇᴅ ᴛᴏ <white>{target}</white><gray>:</gray> <white>{home}</white>"
+  tp-not-found: "{prefix}<#D96C6C>× <white>{target}</white> ʜᴀs ɴᴏ ʜᴏᴍᴇ ɴᴀᴍᴇᴅ <white>{home}</white>"
+  invalid-amount: "{prefix}<#D96C6C>× ᴀᴍᴏᴜɴᴛ ᴍᴜsᴛ ʙᴇ ᴀ ᴘᴏsɪᴛɪᴠᴇ ɴᴜᴍʙᴇʀ"
+  max-exceeded: "{prefix}<#E0B65A>! ᴄᴀᴘᴘᴇᴅ ᴀᴛ ᴛʜᴇ ᴍᴀxɪᴍᴜᴍ ᴏғ <white>{maximum}</white> ʜᴏᴍᴇs"
+  exceeds-kept: "{prefix}<#E0B65A>! <white>{target}</white> ʜᴀs ʜᴏᴍᴇs ᴀʙᴏᴠᴇ ᴛʜᴇ ɴᴇᴡ ʟɪᴍɪᴛ <dark_gray>·</dark_gray> <gray>ᴋᴇᴘᴛ ʙᴜᴛ ʟᴏᴄᴋᴇᴅ"
+  exceeds-deleted: "{prefix}<#E0B65A>! <white>{count}</white> ʜᴏᴍᴇs ᴀʙᴏᴠᴇ ᴛʜᴇ ɴᴇᴡ ʟɪᴍɪᴛ ᴡᴇʀᴇ ᴅᴇʟᴇᴛᴇᴅ ғᴏʀ <white>{target}</white>"
+  home-saved: "{prefix}<#7BC47F>✓ ʜᴏᴍᴇ sᴀᴠᴇᴅ ғᴏʀ <white>{target}</white> <dark_gray>·</dark_gray> <white>{home}</white> <dark_gray>({current}/{limit})"
+  home-deleted: "{prefix}<#7BC47F>✓ ʜᴏᴍᴇ ᴅᴇʟᴇᴛᴇᴅ <dark_gray>·</dark_gray> <white>{target}</white><gray>:</gray> <white>{home}</white>"
+  limit-changed: "{prefix}<#7BC47F>✓ <white>{target}</white> ʟɪᴍɪᴛ <dark_gray>({old} → {new})"
+
+# ---- الإعدادات الشخصية / personal settings
+settings:
+  state-on: "ON"
+  state-off: "OFF"
+  chat-on: "{prefix}<#7BC47F>✓ ᴄʜᴀᴛ ᴍᴇssᴀɢᴇs ᴇɴᴀʙʟᴇᴅ"
+  chat-off: "{prefix}<gray>◉ ᴄʜᴀᴛ ᴍᴇssᴀɢᴇs ᴅɪsᴀʙʟᴇᴅ"
+  sounds-on: "{prefix}<#7BC47F>✓ ᴘʟᴜɢɪɴ sᴏᴜɴᴅs ᴇɴᴀʙʟᴇᴅ"
+  sounds-off: "{prefix}<gray>◉ ᴘʟᴜɢɪɴ sᴏᴜɴᴅs ᴅɪsᴀʙʟᴇᴅ"
+  language-changed: "{prefix}<#7BC47F>✓ ʟᴀɴɢᴜᴀɢᴇ sᴇᴛ ᴛᴏ <white>{language}</white>"
+  admin-chat-changed: "{prefix}<#7BC47F>✓ <white>{target}</white> <gray>ᴄʜᴀᴛ ᴍᴇssᴀɢᴇs <white>{state}</white>"
+  admin-sounds-changed: "{prefix}<#7BC47F>✓ <white>{target}</white> <gray>ᴘʟᴜɢɪɴ sᴏᴜɴᴅs <white>{state}</white>"
+  admin-language-changed: "{prefix}<#7BC47F>✓ <white>{target}</white> <gray>ʟᴀɴɢᴜᴀɢᴇ <white>{language}</white>"
+  language-name:
+    en: "English"
+    ar: "العربية"
+
+# ---- المساعدة / command help
+command:
+  help:
+    - "{prefix}◉ ʜᴏᴍᴇs ᴄᴏᴍᴍᴀɴᴅs"
+    - "<dark_gray>  ◦ <white>/home <gray>ᴏᴘᴇɴ ᴛʜᴇ ʜᴏᴍᴇs ᴍᴇɴᴜ"
+    - "<dark_gray>  ◦ <white>/home [name] <gray>ᴛᴇʟᴇᴘᴏʀᴛ ᴛᴏ ᴀ ʜᴏᴍᴇ"
+    - "<dark_gray>  ◦ <white>/home remove [name] <gray>ᴅᴇʟᴇᴛᴇ ᴀ ʜᴏᴍᴇ"
+    - "<dark_gray>  ◦ <white>/home rest <gray>ᴅᴇʟᴇᴛᴇ ᴇᴠᴇʀʏ ʜᴏᴍᴇ"
+    - "<dark_gray>  ◦ <white>/home setting <gray>ʏᴏᴜʀ ᴘᴇʀsᴏɴᴀʟ sᴇᴛᴛɪɴɢs"
+  admin-help:
+    - "{prefix}◉ ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅs"
+    - "<dark_gray>  ◦ <white>/home admin home [player] <gray>ᴍᴀɴᴀɢᴇ ᴀ ᴘʟᴀʏᴇʀ's ʜᴏᴍᴇs"
+    - "<dark_gray>  ◦ <white>/home admin setting [player] <gray>ᴇᴅɪᴛ ᴀ ᴘʟᴀʏᴇʀ's sᴇᴛᴛɪɴɢs"
+    - "<dark_gray>  ◦ <white>/home admin add [player|all] [amount]"
+    - "<dark_gray>  ◦ <white>/home admin set [player|all] [amount]"
+    - "<dark_gray>  ◦ <white>/home admin rest [player|all]"
+    - "<dark_gray>  ◦ <white>/home admin tp [player] [home]"
+    - "<dark_gray>  ◦ <white>/home admin reload"

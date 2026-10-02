@@ -1,0 +1,66 @@
+# واجهة الإعدادات: /home setting (للاعب نفسه) و /home admin setting <player> (للإداري على لاعب محدد)
+# الحالة {state} تأتي من messages (settings.state-on / settings.state-off) بلغة من يشاهد الواجهة.
+version: 2
+title: "<gradient:#8B0000:#FF5555>ULTRAS HOMES</gradient> <dark_gray>| <gray>Settings"
+admin-title: "<gradient:#8B0000:#FF5555>ULTRAS HOMES</gradient> <dark_gray>| <gray>{target} <dark_gray>- Settings"
+rows: 3
+open-sound: UI_BUTTON_CLICK
+
+background:
+  enabled: true
+  material: BLACK_STAINED_GLASS_PANE
+  name: " "
+  exclude-slots: [11, 13, 15, 22]
+
+chat-messages:
+  slot: 11
+  sound: UI_BUTTON_CLICK
+  on:
+    material: LIME_DYE
+    name: "<white>ᴄʜᴀᴛ ᴍᴇssᴀɢᴇs <dark_gray>- <#7BC47F>{state}"
+    lore:
+      - "<gray>ᴘʟᴜɢɪɴ ᴍᴇssᴀɢᴇs ɪɴ ᴄʜᴀᴛ"
+      - ""
+      - "<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ ᴛᴏɢɢʟᴇ"
+  off:
+    material: GRAY_DYE
+    name: "<white>ᴄʜᴀᴛ ᴍᴇssᴀɢᴇs <dark_gray>- <#D96C6C>{state}"
+    lore:
+      - "<gray>ᴘʟᴜɢɪɴ ᴍᴇssᴀɢᴇs ɪɴ ᴄʜᴀᴛ"
+      - ""
+      - "<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ ᴛᴏɢɢʟᴇ"
+
+plugin-sounds:
+  slot: 13
+  sound: UI_BUTTON_CLICK
+  on:
+    material: NOTE_BLOCK
+    name: "<white>ᴘʟᴜɢɪɴ sᴏᴜɴᴅs <dark_gray>- <#7BC47F>{state}"
+    lore:
+      - "<gray>ᴍᴇɴᴜ ᴀɴᴅ ᴛᴇʟᴇᴘᴏʀᴛ sᴏᴜɴᴅs"
+      - ""
+      - "<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ ᴛᴏɢɢʟᴇ"
+  off:
+    material: GRAY_DYE
+    name: "<white>ᴘʟᴜɢɪɴ sᴏᴜɴᴅs <dark_gray>- <#D96C6C>{state}"
+    lore:
+      - "<gray>ᴍᴇɴᴜ ᴀɴᴅ ᴛᴇʟᴇᴘᴏʀᴛ sᴏᴜɴᴅs"
+      - ""
+      - "<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ ᴛᴏɢɢʟᴇ"
+
+language:
+  slot: 15
+  sound: UI_BUTTON_CLICK
+  material: BOOK
+  name: "<white>ʟᴀɴɢᴜᴀɢᴇ <dark_gray>- <white>{language}"
+  lore:
+    - "<gray>English <dark_gray>→ <gray>العربية"
+    - ""
+    - "<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴀɴɢᴇ"
+
+back:
+  slot: 22
+  material: ARROW
+  name: "<yellow>« Back"
+  lore: ["<gray>◦ ᴄʟɪᴄᴋ ᴛᴏ ɢᴏ ʙᴀᴄᴋ"]
+  sound: UI_BUTTON_CLICK
