@@ -21,7 +21,7 @@ jobs:
         with:
           # No gradlew is committed (this repo was authored in a sandbox without internet/Gradle to
           # generate the wrapper jar), so a specific Gradle version is installed and used directly.
-          gradle-version: '8.10'
+          gradle-version: '9.6.0'
 
       - name: Build
         run: gradle build --no-daemon
